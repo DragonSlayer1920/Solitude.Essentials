@@ -13,7 +13,6 @@ import org.bukkit.entity.Player;
 public class BroadcastCommand implements CommandExecutor
 {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        //if(label.equalsIgnoreCase("broadcast")) {
             Player player = (Player) sender;
             if (args.length == 0) {
                 Core.messageFramework.showErrorMessage(player, ErrorType.CommandFormat);
@@ -26,7 +25,6 @@ public class BroadcastCommand implements CommandExecutor
             }
 
             Core.messageFramework.broadcastMessage(message);
-       // }
         return false;
     }
 }

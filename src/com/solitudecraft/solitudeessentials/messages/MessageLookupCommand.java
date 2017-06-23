@@ -40,7 +40,7 @@ public class MessageLookupCommand implements CommandExecutor {
                 }
             }
             int maxPage;
-            maxPage = (Math.round(results.size() / 5));
+            maxPage = (Math.round((results.size() - 1) / 5));
             sendMessageLookup(player, results, maxPage);
             return  true;
         }
@@ -87,31 +87,6 @@ public class MessageLookupCommand implements CommandExecutor {
 
         int test;
         test = (maxPage - (Page));
-
-
-       /* for(int i = ((test * 5) + 9); i >= ((test * 5) + 5); i--) {
-            if(i < messageList.size()) {
-                Message message = messageList.get(i);
-                DateFormat dateFormat = new SimpleDateFormat("MM/dd/yy HH:mm");
-                String formatDate;
-                formatDate = dateFormat.format(message.messageDate);
-                Core.messageFramework.sendUserMessage(player, Core.uuidFramework.getUsername(message.UUID1) +
-                        " to " + Core.uuidFramework.getUsername(message.UUID2) + ": " + message.messageContent + "" + ChatColor.GRAY + " (" +
-                        formatDate + ")");
-            }
-        }*/
-
-        /*for (int i = ((Page * 5) + 5); i >= (Page * 5); i--) {
-            if(i < messageList.size()) {
-                Message message = messageList.get(i);
-                DateFormat dateFormat = new SimpleDateFormat("MM/dd/yy HH:mm");
-                String formatDate;
-                formatDate = dateFormat.format(message.messageDate);
-                Core.messageFramework.sendUserMessage(player, Core.uuidFramework.getUsername(message.UUID1) +
-                        " to " + Core.uuidFramework.getUsername(message.UUID2) + ": " + message.messageContent + "" + ChatColor.GRAY + " (" +
-                        formatDate + ")");
-            }
-        }*/
 
         for (int i = (Page * 5); i < ((Page * 5) + 5); i++) {
             if(i < messageList.size()) {

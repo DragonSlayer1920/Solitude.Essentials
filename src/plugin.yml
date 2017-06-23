@@ -21,4 +21,4 @@ commands:
   viewmessage:
     aliases: [socialspy, viewmsg, viewpm, msgspy, pmspy]
   lookupmessage:
-    aliases: [lookupmsg, messagelookup, msglookup]
+    aliases: [lookupmsg, messagelookup, msglookup, ml]
