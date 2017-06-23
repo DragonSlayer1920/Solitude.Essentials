@@ -1,0 +1,24 @@
+main: com.solitudecraft.solitudeessentials.SolitudeEssentials
+name: SolitudeEssentials
+version: 0.1
+author: DragonSlayer1920
+description: Solitude Craft essentials.
+
+commands:
+  broadcast:
+    aliases: [b, br]
+  feed:
+    aliases: [food]
+  fly:
+  gamemode:
+    aliases: [gm]
+  heal:
+    aliases: [health, h]
+  time:
+    aliases: [settime]
+  message:
+    aliases: [msg, pm, dm, m, w, whisper]
+  viewmessage:
+    aliases: [socialspy, viewmsg, viewpm, msgspy, pmspy]
+  lookupmessage:
+    aliases: [lookupmsg, messagelookup, msglookup]
