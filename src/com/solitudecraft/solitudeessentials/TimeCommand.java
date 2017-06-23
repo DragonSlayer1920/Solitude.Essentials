@@ -12,6 +12,7 @@ import org.bukkit.entity.Player;
 /**
  * Created by nolan on 6/21/2017.
  */
+
 public class TimeCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player player = (Player) sender;

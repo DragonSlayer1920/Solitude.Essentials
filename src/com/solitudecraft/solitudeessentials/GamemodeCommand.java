@@ -2,8 +2,6 @@ package com.solitudecraft.solitudeessentials;
 
 import com.solitudecraft.solitudecore.Core;
 import com.solitudecraft.solitudecore.ErrorType;
-import com.sun.org.apache.xpath.internal.operations.Variable;
-import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -15,7 +13,6 @@ import org.bukkit.entity.Player;
  */
 public class GamemodeCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        //if(label.equalsIgnoreCase("broadcast")) {
         Player player = (Player) sender;
         if (!(args.length > 0) & !(args.length < 3)) {
             Core.messageFramework.showErrorMessage(player, ErrorType.CommandFormat);
@@ -52,7 +49,6 @@ public class GamemodeCommand implements CommandExecutor {
                 default: gameMode = GameMode.SURVIVAL;
                     break;
             }
-
             player.setGameMode(gameMode);
             Core.messageFramework.sendUserMessage(player, "Your gamemode has been updated to " + ("" + gameMode.name().charAt(0)).toUpperCase() + gameMode.name().substring(1).toLowerCase() + ".");
         }
@@ -90,9 +86,7 @@ public class GamemodeCommand implements CommandExecutor {
                     default: gameMode = GameMode.SURVIVAL;
                         break;
                 }
-
                 target.setGameMode(gameMode);
-
                 Core.messageFramework.sendUserMessage(player, "You have set " + target.getDisplayName() + "'s gamemode to "  + ("" + gameMode.name().charAt(0)).toUpperCase() + gameMode.name().substring(1).toLowerCase() + ".");
                 Core.messageFramework.sendUserMessage(target, "Your gamemode has been updated to " + ("" + gameMode.name().charAt(0)).toUpperCase() + gameMode.name().substring(1).toLowerCase() + ".");
             } else {
@@ -101,7 +95,6 @@ public class GamemodeCommand implements CommandExecutor {
             }
             return false;
         }
-
         return false;
     }
 }

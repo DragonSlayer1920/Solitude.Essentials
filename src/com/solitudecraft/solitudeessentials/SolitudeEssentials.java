@@ -1,9 +1,8 @@
 package com.solitudecraft.solitudeessentials;
 
-import com.solitudecraft.solitudecore.Core;
+import com.solitudecraft.solitudecore.HelpMenu;
 import com.solitudecraft.solitudeessentials.messages.*;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -24,6 +23,11 @@ public class SolitudeEssentials extends JavaPlugin
         getCommand("message").setExecutor(new MessageCommand());
         getCommand("viewmessage").setExecutor(new MessageViewCommand());
         getCommand("lookupmessage").setExecutor(new MessageLookupCommand());
+        getCommand("teleport").setExecutor(new TeleportCommand());
+        getCommand("teleporthere").setExecutor(new TeleportHereCommand());
+        getCommand("help").setExecutor(new HelpCommand());
         Bukkit.getPluginManager().registerEvents(new MessageViewJoinEvent(), this);
+
+
     }
 }

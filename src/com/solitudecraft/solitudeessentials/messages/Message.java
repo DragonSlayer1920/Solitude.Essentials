@@ -5,6 +5,7 @@ import java.util.Date;
 /**
  * Created by nolan on 6/21/2017.
  */
+
 public class Message {
     String UUID1;
     String UUID2;

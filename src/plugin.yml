@@ -22,3 +22,8 @@ commands:
     aliases: [socialspy, viewmsg, viewpm, msgspy, pmspy]
   lookupmessage:
     aliases: [lookupmsg, messagelookup, msglookup, ml]
+  teleport:
+    aliases: [tp]
+  teleporthere:
+    aliases: [tphere]
+  help:
