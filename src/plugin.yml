@@ -38,3 +38,4 @@ commands:
     aliases: [createbwarp, createbutton, cbwarp, cbutton]
   deletebuttonwarp:
     aliases: [delbuttonwarp, delbwarp, delbutton, dbutton]
+  weather:

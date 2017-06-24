@@ -13,6 +13,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 /**
  * Created by nolan on 6/24/2017.
@@ -49,6 +50,18 @@ public class DeleteButtonWarpCommand implements CommandExecutor, Listener {
                     return;
                 }
             }
+        }
+    }
+
+    @EventHandler
+    public void onBlockBreak(BlockBreakEvent event) {
+        Block block = event.getBlock();
+        Player player = event.getPlayer();
+        if(ButtonWarpDatabase.doesButtonWarpExist(block) == true) {
+            ButtonWarp buttonWarp = ButtonWarpDatabase.getButtonWarp(block);
+            ButtonWarpDatabase.buttonWarpDatabase.remove(buttonWarp);
+            Core.messageFramework.sendUserMessage(player, "Button warp removed.");
+            return;
         }
     }
 }

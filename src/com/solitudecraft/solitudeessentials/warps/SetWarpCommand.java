@@ -21,6 +21,11 @@ public class SetWarpCommand implements CommandExecutor {
 
         String warpName = args[0];
 
+        if(WarpDatabase.doesWarpExist(args[0].toUpperCase()) == true) {
+            Core.messageFramework.sendUserMessage(player, "That warp already exists.");
+            return false;
+        }
+
         Warp warp = new Warp(args[0].toUpperCase(), SolitudeEssentials.locationToString(player.getLocation()));
         WarpDatabase.warpDatabase.add(warp);
         Core.messageFramework.sendUserMessage(player, "You have created Warp " + ("" + warpName.charAt(0)).toUpperCase() + warpName.substring(1).toLowerCase() + ".");

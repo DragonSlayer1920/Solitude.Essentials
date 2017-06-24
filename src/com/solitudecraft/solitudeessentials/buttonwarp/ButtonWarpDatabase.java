@@ -14,7 +14,7 @@ import java.util.UUID;
  * Created by nolan on 6/24/2017.
  */
 public class ButtonWarpDatabase {
-    public static ArrayList<ButtonWarp> buttonWarpDatabase = new ArrayList<ButtonWarp>();
+    public static ArrayList<ButtonWarp> buttonWarpDatabase = new ArrayList<>();
     public static HashMap<Player, Warp> creatingButtonWarp = new HashMap<Player, Warp>();
     public static ArrayList<UUID> deletingButtonWarp = new ArrayList<>();
 

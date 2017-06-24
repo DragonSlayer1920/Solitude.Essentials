@@ -54,7 +54,7 @@ public class CreateButtonWarpCommand implements CommandExecutor, Listener {
                         ButtonWarpDatabase.creatingButtonWarp.remove(player);
                         return;
                     }
-                    Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(SolitudeEssentials.solitudeEssentials, new Runnable() {
+                   Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(SolitudeEssentials.solitudeEssentials, new Runnable() {
                         public void run() {
                             ButtonWarpDatabase.buttonWarpDatabase.add(buttonWarp);
                         }

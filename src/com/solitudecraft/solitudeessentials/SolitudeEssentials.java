@@ -1,14 +1,8 @@
 package com.solitudecraft.solitudeessentials;
 
-import com.solitudecraft.solitudeessentials.buttonwarp.ButtonWarp;
-import com.solitudecraft.solitudeessentials.buttonwarp.ButtonWarpUseEvent;
-import com.solitudecraft.solitudeessentials.buttonwarp.CreateButtonWarpCommand;
-import com.solitudecraft.solitudeessentials.buttonwarp.DeleteButtonWarpCommand;
+import com.solitudecraft.solitudeessentials.buttonwarp.*;
 import com.solitudecraft.solitudeessentials.messages.*;
-import com.solitudecraft.solitudeessentials.warps.SetWarpCommand;
-import com.solitudecraft.solitudeessentials.warps.Warp;
-import com.solitudecraft.solitudeessentials.warps.WarpCommand;
-import com.solitudecraft.solitudeessentials.warps.DeleteWarpCommand;
+import com.solitudecraft.solitudeessentials.warps.*;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -26,6 +20,8 @@ public class SolitudeEssentials extends JavaPlugin
         solitudeEssentials = this;
         messageMySQL = new MessageMySQL("sql3.freemysqlhosting.net", "sql3181335", "67vwPsEQUH", "sql3181335");
         messageMySQL.populateMessageDatabase();
+        Warp.loadWarps();
+        ButtonWarp.loadButtonWarps();
         getCommand("broadcast").setExecutor(new BroadcastCommand());
         getCommand("feed").setExecutor(new FeedCommand());
         getCommand("fly").setExecutor(new FlyCommand());
@@ -44,13 +40,12 @@ public class SolitudeEssentials extends JavaPlugin
         getCommand("warp").setExecutor(new WarpCommand());
         getCommand("createbuttonwarp").setExecutor(new CreateButtonWarpCommand());
         getCommand("deletebuttonwarp").setExecutor(new DeleteButtonWarpCommand());
+        getCommand("weather").setExecutor(new WeatherCommand());
         Bukkit.getPluginManager().registerEvents(new MessageViewJoinEvent(), this);
         Bukkit.getPluginManager().registerEvents(new CreateButtonWarpCommand(), this);
         Bukkit.getPluginManager().registerEvents(new DeleteButtonWarpCommand(), this);
         Bukkit.getPluginManager().registerEvents(new ButtonWarpUseEvent(),this);
-
-        Warp.loadWarps();
-        ButtonWarp.loadButtonWarps();
+        Bukkit.broadcastMessage(ButtonWarpDatabase.buttonWarpDatabase.size() + "");
     }
 
     public void onDisable() {

@@ -16,7 +16,6 @@ public class ButtonWarp implements Serializable {
     public ButtonWarp(String buttonLocation, Warp warp) {
         buttonWarpButton = buttonLocation;
         buttonWarpWarp = warp;
-
     }
 
     public static void saveButtonWarps() {
