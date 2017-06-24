@@ -17,7 +17,6 @@ public class FlyCommand implements CommandExecutor {
             Core.messageFramework.showErrorMessage(player, ErrorType.CommandFormat);
             return false;
         }
-
         if(args.length == 0) {
             if(player.getAllowFlight() == true) {
                 player.setAllowFlight(false);

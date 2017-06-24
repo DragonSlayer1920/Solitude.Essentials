@@ -34,8 +34,6 @@ public class HelpCommand implements CommandExecutor {
             Core.messageFramework.showHelpMenu(player, helpMenu);
             return  true;
         }
-
-
         return true;
     }
 }

@@ -18,16 +18,18 @@ public class FeedCommand implements CommandExecutor{
             Core.messageFramework.showErrorMessage(player, ErrorType.CommandFormat);
             return false;
         }
-
         if(args.length == 0) {
             player.setFoodLevel(20);
             Core.messageFramework.sendUserMessage(player, "You have been feed.");
             return true;
         }
-
         if(args.length == 1) {
             if (player.getServer().getPlayer(args[0]) != null) {
                 Player target = player.getServer().getPlayer((args[0]));
+                if(player == target) {
+                    Core.messageFramework.showErrorMessage(player, ErrorType.InvalidTarget);
+                    return false;
+                }
                 target.setFoodLevel(20);
                 Core.messageFramework.sendUserMessage(player, "You have feed " + target.getDisplayName() + ".");
                 Core.messageFramework.sendUserMessage(target, "You have been feed.");

@@ -18,7 +18,6 @@ public class GamemodeCommand implements CommandExecutor {
             Core.messageFramework.showErrorMessage(player, ErrorType.CommandFormat);
             return false;
         }
-
         if(args.length == 1) {
             GameMode gameMode;
             switch (args[0].toString().toUpperCase()) {
@@ -52,11 +51,13 @@ public class GamemodeCommand implements CommandExecutor {
             player.setGameMode(gameMode);
             Core.messageFramework.sendUserMessage(player, "Your gamemode has been updated to " + ("" + gameMode.name().charAt(0)).toUpperCase() + gameMode.name().substring(1).toLowerCase() + ".");
         }
-
         if(args.length == 2) {
             if (player.getServer().getPlayer(args[0]) != null) {
                 Player target = player.getServer().getPlayer((args[0]));
-
+                if(player == target) {
+                    Core.messageFramework.showErrorMessage(player, ErrorType.InvalidTarget);
+                    return false;
+                }
                 GameMode gameMode;
                 switch (args[0].toString().toUpperCase()) {
                     case "0": gameMode = GameMode.SURVIVAL;

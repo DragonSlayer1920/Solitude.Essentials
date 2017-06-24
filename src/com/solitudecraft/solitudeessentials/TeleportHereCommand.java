@@ -20,7 +20,10 @@ public class TeleportHereCommand implements CommandExecutor {
 
         if (player.getServer().getPlayer(args[0]) != null) {
             Player target = player.getServer().getPlayer(args[0]);
-
+            if(player == target) {
+                Core.messageFramework.showErrorMessage(player, ErrorType.InvalidTarget);
+                return false;
+            }
             target.teleport(player.getLocation());
             Core.messageFramework.sendUserMessage(player, "You have teleported " + target.getDisplayName().toString() + " to your location.");
             Core.messageFramework.sendUserMessage(target, "You have been teleported to " + player.getDisplayName().toString() + ".");

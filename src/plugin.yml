@@ -23,7 +23,18 @@ commands:
   lookupmessage:
     aliases: [lookupmsg, messagelookup, msglookup, ml]
   teleport:
-    aliases: [tp]
+  tp:
+    aliases: [tport]
   teleporthere:
     aliases: [tphere]
   help:
+  setwarp:
+    aliases: [swarp, cwarp, createwarp, newwarp]
+  warp:
+    aliases: [w]
+  deletewarp:
+    aliases: [dwarp, delwarp, removewarp]
+  createbuttonwarp:
+    aliases: [createbwarp, createbutton, cbwarp, cbutton]
+  deletebuttonwarp:
+    aliases: [delbuttonwarp, delbwarp, delbutton, dbutton]
